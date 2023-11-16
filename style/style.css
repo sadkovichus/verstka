@@ -1,18 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 /*  */
 
-body {
-    opacity: 0;
-    transition-duration: 1s;
+body::-webkit-scrollbar {
+    display: none;            /* ширина всей полосы прокрутки */
 }
+
 
 @font-face {
     font-family: Furore;
     src: url('../fonts/Furore/Furore.otf') format("opentype");
 }
 
-/*  */
+/* Support Panel */
 
+.right-auxiliary-panel {
+    /* position: absolute;
+    right: 0;
+    top: 0; */
+    translate: 50px 0;
+    padding-top: 136px;
+    display: flex;
+    height: 100%;
+}
+
+.right-auxiliary-panel__mouse {
+    margin-top: auto;
+}
+
+.wrapper__solution-panel {
+    margin-left: auto;
+}
+
+
+/*  */
 
 .wrapper {
     flex: 1;
@@ -21,7 +41,7 @@ body {
 }
 
 .wrapper__header {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background: url('../assets/interior-large-logistics-warehouse-ai-generative\ 4.svg') no-repeat;
     background-size: cover;
@@ -91,7 +111,6 @@ body {
     border: none;
     height: 25px;
     width: 40px;
-    cursor: pointer;
 }
 
 .wrapper__burger-btn span {
@@ -131,11 +150,13 @@ body {
 /* Top Content */
 
 .wrapper__header-content {
+    position: relative;
     max-width: 1178px;
     width: 100%;
     margin: 0 auto;
     margin-top: 109px;
     height: 100%;
+    display: flex;
 }
 
 .wrapper__header-left {
@@ -160,11 +181,228 @@ body {
 }
 
 .wrapper__stat-info {
-    color: #FFF;
+    margin-left: 31px;
 
+    color: #FFF;
     font-family: Raleway;
     font-size: 27px;
-    font-style: normal;
     font-weight: 600;
     line-height: 130%;
+}
+
+.wrapper__rating {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    height: 94px;
+    background: url('../assets/Vector\ \(9\).svg') no-repeat;
+    background-position: top;
+}
+
+.wrapper__rating-col {
+    width: 24px;
+    background-color: #FFFFFF;
+    transition-duration:.5s;
+    height: 0;
+    transition-property: height;
+}
+
+.wrapper__rating-col--actived:nth-child(1) {
+    transition-delay: 0;
+    height: 25px;
+}
+.wrapper__rating-col--actived:nth-child(2) {
+    transition-delay: .5s;
+    height: 35px;
+}
+.wrapper__rating-col--actived:nth-child(3) {
+    transition-delay: 1s;
+    height: 45px;
+}
+
+.wrapper__get-solution {
+    position: relative;
+    padding: 30px 75px;
+    border: 2px solid var(--or1, #EE562F);
+    background: linear-gradient(261deg, rgba(255, 255, 255, 0.15) -15.81%, rgba(255, 255, 255, 0.00) 114.52%), #E9552F;
+    margin-top: 73px;
+
+    color: #FFF;
+    font-family: Furore;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.wrapper__get-solution::after,
+.wrapper__get-solution::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    pointer-events: none;
+}
+
+.wrapper__get-solution::before {
+    background: linear-gradient(217deg, rgba(255, 255, 255, 0.20) 3.94%, rgba(255, 255, 255, 0.00) 93.13%), var(--Orange, #EE562F);
+    height: 68px;
+    width: 2px;
+    translate: 22px -50%;
+}
+
+.wrapper__get-solution::after {
+    translate: 200px -50%;
+    content: "Нажмите, чтобы получить решение и расчет стоимости ";
+    max-width: 163px;
+
+    color: #ffffff80;
+    text-align: start;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: 0.32px;
+}
+
+.wrapper__header-man {
+    position: absolute;
+    bottom: 0;
+    right: 77px;
+    height: 643px;
+}
+
+.wrapper__man-info {
+    margin: 100px 0 auto auto;
+    border-radius: 15px;
+    padding: 25px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: linear-gradient(133deg, rgba(255, 255, 255, 0.00) -8.04%, rgba(255, 255, 255, 0.15) 50.06%, rgba(255, 255, 255, 0.00) 92.45%), #353535;
+}
+
+.wrapper__man-name {
+    border-radius: 5px;
+    padding: 10px 30px;
+    background: linear-gradient(226deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%), var(--Orange, #EE562F);
+
+    color: #FFF;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.wrapper__man-pos {
+    margin-top: 15px;
+    max-width: 202px;
+
+    color: #ffffff77;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+/* Content style */
+
+.wrapper__our-solution {
+    position: relative;
+    background-color: #F3F3F3;
+    padding-top: 120px;
+    height: 100vh;
+}
+
+.wrapper__solution-container {
+    position: relative;
+    max-width: 1178px;
+    /* padding-bottom: 345px; */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.main-title {
+    padding-bottom: 20px;
+
+    font-family: Furore;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 2.4px;
+}
+
+.main-interval {
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+}
+
+.wrapper__solution-title {
+    max-width: 487px;
+
+    color: #444;
+}
+
+.wrapper__left-solution {
+    max-width: 969px;
+    width: 100%;
+}
+
+.wrapper__solution-list {
+    width: 153px;
+    display: flex;
+    gap: 123px;
+}
+
+.wrapper__solution-item {
+    transition-duration: .2s;
+}
+
+.wrapper__solution-item:hover {
+    scale: 1.1;
+}
+
+.wrapper__solution-item:hover .wrapper__solution-img {
+    scale: 1.1;
+}
+
+.wrapper__solution-item:last-child:hover .wrapper__solution-img {
+    animation: animService 1s .6s linear infinite;
+} 
+
+@keyframes animService {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 180deg;
+    }
+}
+
+.wrapper__solution-top {
+    background: url('../assets/header/solution/bg.svg') no-repeat;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper__solution-img {
+    transition-property: scale;
+    transition-duration: .2s;
+    transition-delay: .3s;
+}
+
+.wrapper__solution-item-text {
+    margin-top: 20px;
+
+    color: #000;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%
 }

@@ -156,3 +156,7 @@ html {
         flex:1;
         overflow: auto;
     }
+
+    button {
+        cursor: pointer;
+    }
