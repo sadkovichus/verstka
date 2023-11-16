@@ -11,6 +11,12 @@ body::-webkit-scrollbar {
     src: url('../fonts/Furore/Furore.otf') format("opentype");
 }
 
+.container {
+    width: 100%;
+    max-width: 1178px;
+    margin: 0 auto;
+}
+
 /* Support Panel */
 
 .right-auxiliary-panel {
@@ -314,11 +320,8 @@ body::-webkit-scrollbar {
 
 .wrapper__solution-container {
     position: relative;
-    max-width: 1178px;
     /* padding-bottom: 345px; */
-    width: 100%;
     height: 100%;
-    margin: 0 auto;
     display: flex;
 }
 
